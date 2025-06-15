@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Predigtanalyse Tool</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: 2em auto; padding: 0 1em; }
+  label { display: block; margin-top: 1em; font-weight: bold; }
+  select, textarea, input[type=text] { width: 100%; padding: 0.5em; margin-top: 0.3em; }
+  textarea { height: 200px; font-family: monospace; }
+  button { margin-top: 1.5em; padding: 0.7em 1.5em; font-size: 1em; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h1>Predigtanalyse Tool</h1>
+
+<form id="predigtForm">
+  <label for="geschlecht">Geschlecht des/der Predigenden (w oder m):</label>
+  <select id="geschlecht" name="geschlecht" required>
+    <option value="" disabled selected>Bitte wählen</option>
+    <option value="w">weiblich (w)</option>
+    <option value="m">männlich (m)</option>
+  </select>
+
+  <label for="sonntag">Sonntag im Kirchenjahr (z. B. 7. Sonntag nach Trinitatis):</label>
+  <input type="text" id="sonntag" name="sonntag" placeholder="z. B. 7. Sonntag nach Trinitatis" required />
+
+  <label for="predigttext">Predigttext zur Analyse:</label>
+  <textarea id="predigttext" name="predigttext" placeholder="Hier den kompletten Predigttext einfügen..." required></textarea>
+
+  <button type="submit">Analyse starten</button>
+</form>
+
+<script>
+  document.getElementById('predigtForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const geschlecht = document.getElementById('geschlecht').value;
+    const sonntag = document.getElementById('sonntag').value.trim();
+    const predigttext = document.getElementById('predigttext').value.trim();
+
+    if (!geschlecht || !sonntag || !predigttext) {
+      alert('Bitte alle Felder ausfüllen.');
+      return;
+    }
+
+    // Hier würdest du die Daten an deinen KI-Agenten oder eine API schicken.
+    // Für Demo: Ausgabe in der Konsole
+    console.log('Geschlecht:', geschlecht);
+    console.log('Sonntag:', sonntag);
+    console.log('Predigttext:', predigttext);
+
+    alert('Daten erfasst. Implementiere hier den KI-API-Aufruf.');
+
+    // Beispiel: Weiterverarbeitung oder API-Call...
+  });
+</script>
+
+</body>
+</html>
+
+
+  <button type="submit" class="submit-btn">Analyse abschicken</button>
+</form>
+
+<script>
+  document.getElementById('predigtanalyseForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Formular abgeschickt. Implementiere hier deine Server- oder KI-Anbindung.');
+    // Hier kann später der KI-Aufruf oder die Datenspeicherung erfolgen
+  });
+</script>
+
+<footer>
+  &copy; 2025 Predigtanalyse Tool
+</footer>
+
+</body>
+</html>
